@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".registerlogin.LoginActivity"
+    android:background="@android:color/holo_green_light"
+    >
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/ET_email"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/white"
+        android:hint="Email"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/ET_password"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/white"
+        android:hint="Password"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="numberPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ET_email"
+        />
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="8dp"
+        android:text="LOGIN"
+        app:layout_constraintEnd_toEndOf="@id/ET_password"
+        app:layout_constraintStart_toStartOf="@id/ET_password"
+        app:layout_constraintTop_toBottomOf="@id/ET_password" />
+
+    <TextView
+        android:id="@+id/not_hav_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to registration "
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/login_btn"
+        app:layout_constraintStart_toStartOf="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
