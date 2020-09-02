@@ -24,16 +24,17 @@ class LastestMessagesActivity : AppCompatActivity() {
         var currentUser: User? = null
     }
 
-     val adapter = GroupAdapter<ViewHolder>()
+     private val adapter = GroupAdapter<ViewHolder>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lastest_messages)
+        setSupportActionBar(topAppBar)
         verifyUserIsLoggedIn()
 
         rv_lastest_messages.adapter = adapter
         rv_lastest_messages.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
 
-        adapter.setOnItemClickListener { item, view ->
+        adapter.setOnItemClickListener { item, _ ->
           //  Log.d(listenForLatestMessages.TAG, "123")
             val intent = Intent(this, ChatLogActivity::class.java)
             // we are missing the chat partner user
@@ -44,13 +45,17 @@ class LastestMessagesActivity : AppCompatActivity() {
         listenForLatestMessages()
 
         fetchCurrentUser()
+        fab.setOnClickListener {
+            val intent = Intent(this, NewMessageActivity::class.java)
+            startActivity(intent)
+        }
     }
     val latestMessagesMap = HashMap<String, ChatMessage>()
 
     private fun refreshRecyclerViewMessages() {
         adapter.clear()
         latestMessagesMap.values.forEach {
-            adapter.add(LatestMessageRow(it))
+            adapter.add(LatestMessageRow(it,applicationContext))
         }
     }
 
@@ -110,8 +115,11 @@ class LastestMessagesActivity : AppCompatActivity() {
 
     //handle what action when clicked item in menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        Log.d("TAG1", "onOptionsItemSelected:  ")
+
         when (item.itemId) {
             R.id.menu_new_message -> {
+                Log.d("TAG", "onOptionsItemSelected:  ")
                 val intent = Intent(this, NewMessageActivity::class.java)
                 startActivity(intent)
             }

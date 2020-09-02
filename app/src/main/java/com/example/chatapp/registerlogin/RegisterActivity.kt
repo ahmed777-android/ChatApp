@@ -26,8 +26,8 @@ class RegisterActivity : AppCompatActivity() {
         text.text = "SELECT\nPHOTO"
         register_btn.setOnClickListener { performRegister() }
         hav_acc.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            //when click in text that will finish activity and return to parent
+            finish()
         }
         //that on click used to take image from mobile storage
         cardView.setOnClickListener {

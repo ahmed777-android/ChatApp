@@ -1,43 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardlog"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_margin="30dp"
-        app:cardCornerRadius="35dp"
-        android:paddingEnd="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginBottom="12dp"
-        >
-
-        <ImageView
-            android:id="@+id/profile_from"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
-    </androidx.cardview.widget.CardView>
+    android:background="#B3E5FC">
 
     <TextView
         android:id="@+id/textViewfrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:background="@drawable/round_edittext"
-        android:maxWidth="240dp"
-        android:padding="16dp"
-        android:text=""
         android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/cardlog"
-        app:layout_constraintTop_toTopOf="@+id/cardlog"
+        android:background="@drawable/round_message_from"
+        android:maxWidth="240dp"
+        android:paddingStart="30dp"
+        android:paddingTop="16dp"
+        android:paddingEnd="30dp"
+        android:paddingBottom="16dp"
+        android:text="hi"
+        android:textAlignment="center"
+        android:textColor="#455A64"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
         />
 
 

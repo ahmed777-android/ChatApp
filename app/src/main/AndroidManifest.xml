@@ -21,13 +21,15 @@
                 android:value=".messages.LastestMessagesActivity" />
         </activity>
         <activity android:name=".messages.LastestMessagesActivity" />
-        <activity android:name=".registerlogin.LoginActivity" />
-        <activity android:name=".registerlogin.RegisterActivity">
+        <activity android:name=".registerlogin.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".registerlogin.RegisterActivity">
+
         </activity>
     </application>
 

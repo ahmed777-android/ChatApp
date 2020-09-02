@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.example.chatapp.R
 import com.example.chatapp.messages.LastestMessagesActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -21,11 +22,12 @@ class LoginActivity : AppCompatActivity() {
             performLogin()
         }
 
-        not_hav_acc.setOnClickListener{
-            //when click in text that will finish activity and return to parent
-            finish()
+        not_hav_acc.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
+
     private fun performLogin() {
         val email = ET_email.text.toString()
         val password = ET_password.text.toString()
@@ -38,7 +40,7 @@ class LoginActivity : AppCompatActivity() {
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (!it.isSuccessful) return@addOnCompleteListener
-              //  Log.d("Login", "Successfully logged in: ${it.result?.user?.uid}")
+                //  Log.d("Login", "Successfully logged in: ${it.result?.user?.uid}")
 
                 val intent = Intent(this, LastestMessagesActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
